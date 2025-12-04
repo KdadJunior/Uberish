@@ -1,0 +1,8 @@
+FROM python:latest
+WORKDIR /app
+COPY app.py .
+COPY listings.sql .
+RUN pip install flask requests
+EXPOSE 5000
+CMD ["python", "app.py"]
+

@@ -1,0 +1,44 @@
+services:
+  user:
+    build:
+      context: .
+      dockerfile: users/Dockerfile.users
+    container_name: user
+    ports:
+      - "9000:5000"
+    networks:
+      - agyekumd
+  availability:
+    build:
+      context: ./availability
+      dockerfile: Dockerfile.availability
+    container_name: availability
+    ports:
+      - "9001:5000"
+    networks:
+      - agyekumd
+  reservations:
+    build:
+      context: ./reservations
+      dockerfile: Dockerfile.reservations
+    container_name: reservations
+    ports:
+      - "9002:5000"
+    networks:
+      - agyekumd
+  payments:
+    build:
+      context: ./payments
+      dockerfile: Dockerfile.payments
+    container_name: payments
+    ports:
+      - "9003:5000"
+    networks:
+      - agyekumd
+
+networks:
+  agyekumd:
+    driver: bridge
+
+
+    
