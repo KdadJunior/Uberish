@@ -392,7 +392,7 @@ This is a project submission. For questions or issues, please contact the projec
 
 ## 📄 License
 
-This project is part of an academic assignment.
+
 
 ---
 
